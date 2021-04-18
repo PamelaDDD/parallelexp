@@ -16,7 +16,7 @@ class QuotesSpider(scrapy.Spider):
 
     def parse(self, response,**kwargs):
         QuotesSpider.lock.acquire()
-        filename = '/Users/duwenjing/Downloads/parallelexpdata/%d.html' % QuotesSpider.cnt
+        filename = '/mnt/cephfs/home/duwenjing/dataset/parallelexpdata/%d.html' % QuotesSpider.cnt
         QuotesSpider.cnt += 1
         QuotesSpider.lock.release()
         with open(filename,'w') as f:
